@@ -1,0 +1,43 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+const int MAX = 100; 
+
+int getgold(int gold[][MAX],int m,int n)
+{
+int goldtable[m][n];
+memset(goldtable,0,sizeof(goldtable));
+
+for(int col=n-1;col>=0;col--)
+{
+for(int row=0;row<m;row++)
+{
+int right=(col==n-1)? 0:goldtable[row][col+1];
+
+int right_up=(row==0)? 0:goldtable[row-1][col+1];
+
+int right_down=(row==n-1)?0:goldtable[row+1][col+1];
+
+goldtable[row][col]=gold[row][col]+max(right,max(right_up,right_down));
+}
+}
+int res=goldtable[0][0];
+for(i=1;i<m;i++)
+res=max(res,goldtable[i][0]);
+return res;
+ }
+ int main()
+ {
+ int m,n;
+ cin>>m>>n;
+ int gold[m][n];
+ for(int i=0;i<m;i++)
+ {
+ for(int j=0;j<n;j++)
+ {
+ cin>>gold[i][j];
+ }
+ }
+ cout<<getgold(gold,m,n);
+ return 0;
+ }    
