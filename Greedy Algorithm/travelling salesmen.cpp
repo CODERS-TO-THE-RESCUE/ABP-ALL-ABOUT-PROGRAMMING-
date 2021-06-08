@@ -2,20 +2,20 @@
 using namespace std;
 #define V 4
  
-// implementation of traveling Salesman Problem
+// implementation of traveling  Problem
 int travllingSalesmanProblem(int graph[][V], int s)
 {
-    // store all vertex apart from source vertex
+    //  all vertex apart from source vertex
     vector<int> vertex;
     for (int i = 0; i < V; i++)
         if (i != s)
             vertex.push_back(i);
  
-    // store minimum weight Hamiltonian Cycle.
+    //  minimum weight Hamiltonian Cycle.
     int min_path = INT_MAX;
     do {
  
-        // store current Path weight(cost)
+        //  current Path weight(cost)
         int current_pathweight = 0;
  
         // compute current path weight
