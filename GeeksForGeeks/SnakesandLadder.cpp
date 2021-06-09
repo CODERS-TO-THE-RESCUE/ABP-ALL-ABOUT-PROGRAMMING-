@@ -1,5 +1,5 @@
 // C++ program to find minimum number of dice throws required to
-// reach last cell from first cell of a given snake and ladder
+// reach last cell from first cell of a given  and ladder
 // board
 #include<iostream>
 #include <queue>
@@ -13,10 +13,10 @@ struct queueEntry
 };
 
 // This function returns minimum number of dice throws required to
-// Reach last cell from 0'th cell in a snake and ladder game.
+// Reach last cell from 0'th cell in a  and ladder game.
 // move[] is an array of size N where N is no. of cells on board
-// If there is no snake or ladder from cell i, then move[i] is -1
-// Otherwise move[i] contains cell to which snake or ladder at i
+// If there is no  or ladder from cell i, then move[i] is -1
+// Otherwise move[i] contains cell to which  or ladder at i
 // takes to.
 int getMinDiceThrows(int move[], int N)
 {
@@ -61,8 +61,8 @@ int getMinDiceThrows(int move[], int N)
 				a.dist = (qe.dist + 1);
 				visited[j] = true;
 
-				// Check if there a snake or ladder at 'j'
-				// then tail of snake or top of ladder
+				//  if there a  or ladder at 'j'
+				// then tail of  or top of ladder
 				// become the adjacent of 'i'
 				if (move[j] != -1)
 					a.v = move[j];
